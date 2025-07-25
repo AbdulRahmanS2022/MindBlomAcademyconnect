@@ -4,5 +4,4 @@
 
 [functions]
   directory = "netlify/functions"
-  python_version = "3.12"
   node_bundler = "esbuild"
