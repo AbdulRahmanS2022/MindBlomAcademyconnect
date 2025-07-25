@@ -1,0 +1,19 @@
+# netlify.toml
+[build]
+  # This command will be run during Netlify's build process.
+  # It installs all dependencies listed in your requirements.txt.
+  command = "pip install -r requirements.txt"
+  # 'publish' directory is typically for frontends, but Netlify still requires it.
+  # It won't directly affect your functions.
+  publish = "build"
+
+[functions]
+  # This tells Netlify where to find your serverless function directories.
+  # Each subfolder in this directory (e.g., 'log_interaction_api') will be a separate function.
+  directory = "netlify/functions"
+  # Specify the Python version for your functions.
+  # This should match the version you intend to use (e.g., Python 3.12, assuming you use it locally).
+  python_version = "3.12"
+  # 'esbuild' is a fast JavaScript bundler Netlify uses for some functions.
+  # It might be helpful for packaging Python functions, too.
+  node_bundler = "esbuild"
